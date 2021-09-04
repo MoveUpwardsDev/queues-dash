@@ -87,13 +87,8 @@
         "repositoryURL": "https://github.com/vapor/postgres-kit.git",
         "state": {
           "branch": null,
-<<<<<<< Updated upstream
-          "revision": "529bde8ce86c8a2546e7e8856c206f3358dff41e",
-          "version": "4.2.0"
-=======
           "revision": "6f35f3065ef923475553ad6f85660ad971fe6cf3",
           "version": "2.3.2"
->>>>>>> Stashed changes
         }
       },
       {
@@ -118,15 +113,9 @@
         "package": "queues-database-hooks",
         "repositoryURL": "https://github.com/MoveUpwardsDev/queues-database-hooks.git",
         "state": {
-<<<<<<< Updated upstream
-          "branch": null,
-          "revision": "204ccf874a0fd6fecef2a17950045e854e997932",
-          "version": "0.2.0"
-=======
           "branch": "feature/postgresql",
           "revision": "e2ff5e6c37d53952ec2229e9dd87768ea41c8b59",
           "version": null
->>>>>>> Stashed changes
         }
       },
       {
