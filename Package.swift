@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -9,10 +9,10 @@ let package = Package(
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
-        .package(url: "https://github.com/vapor-community/queues-database-hooks.git", from: "0.1.0"),
+        .package(url: "https://github.com/MoveUpwardsDev/queues-database-hooks.git", .branch("feature/postgresql")),
         .package(url: "https://github.com/vapor/leaf", from: "4.0.0-rc.1.2"),
         .package(url: "https://github.com/vapor/fluent.git", from: "4.0.0"),
-        .package(url: "https://github.com/vapor/fluent-mysql-driver.git", from: "4.0.0")
+        .package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.0.0"),
     ],
     targets: [
         .target(
@@ -22,7 +22,7 @@ let package = Package(
                 .product(name: "QueuesDatabaseHooks", package: "queues-database-hooks"),
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "Fluent", package: "fluent"),
-                .product(name: "FluentMySQLDriver", package: "fluent-mysql-driver")
+                .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

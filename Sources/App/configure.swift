@@ -1,6 +1,6 @@
 import Vapor
 import Leaf
-import FluentMySQLDriver
+import FluentPostgresDriver
 import Fluent
 import FluentKit
 
@@ -12,23 +12,16 @@ public func configure(_ app: Application) throws {
     app.leaf.tags["dateFormat"] = DateFormatTag()
     app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
-    guard let databaseUrlString = Environment.get("DATABASE_URL") else { throw Abort(.internalServerError) }
-    guard let databaseUrl = URL(string: databaseUrlString) else { throw Abort(.internalServerError) }
     app.databases.use(
-        .mysql(
-            configuration: .init(
-                hostname: databaseUrl.host ?? "",
-                port: databaseUrl.port ?? 0,
-                username: databaseUrl.user ?? "",
-                password: databaseUrl.password ?? "",
-                database: databaseUrl.path.split(separator: "/").last.flatMap(String.init),
-                tlsConfiguration: .forClient(certificateVerification: .none)
-            ),
-            maxConnectionsPerEventLoop: 30,
-            connectionPoolTimeout: .minutes(1)
-        ),
-        as: .mysql
-    )
+        .postgres(
+            hostname: Environment.get("DATABASE_HOST") ?? "localhost",
+            port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? PostgresConfiguration.ianaPortNumber,
+            username: Environment.get("DATABASE_USERNAME") ?? "vapor",
+            password: Environment.get("DATABASE_PASSWORD") ?? "password",
+            database: Environment.get("DATABASE_NAME") ?? "vapor"
+        ), as: .psql)
+
+    app.http.server.configuration.port = Environment.get("SERVER_PORT").toInt(or: 9090)
 
     // register routes
     try routes(app)

@@ -47,12 +47,12 @@
         }
       },
       {
-        "package": "fluent-mysql-driver",
-        "repositoryURL": "https://github.com/vapor/fluent-mysql-driver.git",
+        "package": "fluent-postgres-driver",
+        "repositoryURL": "https://github.com/vapor/fluent-postgres-driver.git",
         "state": {
           "branch": null,
-          "revision": "699e164880387349bf04c2329fe53097524a5904",
-          "version": "4.0.0"
+          "revision": "afe159ce915e752ab5f5b76479dc78a17051ce73",
+          "version": "2.1.3"
         }
       },
       {
@@ -83,21 +83,26 @@
         }
       },
       {
-        "package": "mysql-kit",
-        "repositoryURL": "https://github.com/vapor/mysql-kit.git",
+        "package": "postgres-kit",
+        "repositoryURL": "https://github.com/vapor/postgres-kit.git",
         "state": {
           "branch": null,
+<<<<<<< Updated upstream
           "revision": "529bde8ce86c8a2546e7e8856c206f3358dff41e",
           "version": "4.2.0"
+=======
+          "revision": "6f35f3065ef923475553ad6f85660ad971fe6cf3",
+          "version": "2.3.2"
+>>>>>>> Stashed changes
         }
       },
       {
-        "package": "mysql-nio",
-        "repositoryURL": "https://github.com/vapor/mysql-nio.git",
+        "package": "postgres-nio",
+        "repositoryURL": "https://github.com/vapor/postgres-nio.git",
         "state": {
           "branch": null,
-          "revision": "4cbef4c0903c9792ff1f8dc4b55532276fa70c99",
-          "version": "1.3.2"
+          "revision": "6a9eb6f15235e844c95382959a88253442168a42",
+          "version": "1.6.1"
         }
       },
       {
@@ -111,11 +116,17 @@
       },
       {
         "package": "queues-database-hooks",
-        "repositoryURL": "https://github.com/vapor-community/queues-database-hooks.git",
+        "repositoryURL": "https://github.com/MoveUpwardsDev/queues-database-hooks.git",
         "state": {
+<<<<<<< Updated upstream
           "branch": null,
           "revision": "204ccf874a0fd6fecef2a17950045e854e997932",
           "version": "0.2.0"
+=======
+          "branch": "feature/postgresql",
+          "revision": "e2ff5e6c37d53952ec2229e9dd87768ea41c8b59",
+          "version": null
+>>>>>>> Stashed changes
         }
       },
       {
